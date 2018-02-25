@@ -1,6 +1,6 @@
 nav, .navbar {
   background-color: #332C1F;
-  height: 60px;
+  height: 55px;
   padding: 10px 30px;
 }
 
@@ -57,4 +57,22 @@ nav ul li a:hover {
   right: -5px;
   color: #0FAAB1;
   box-shadow: 0px 0px 0px 0px;
+}
+
+#sub-nav {
+  height: 65px;
+  width: 100%;
+  background-color: red;
+  padding: 10px 30px;
+}
+
+#cart-access {
+  float: right;
+  display: inline-block;
+  background-color: blue;
+  padding: 10px;
+}
+
+#cart-access .b-span {
+  border: 1px solid black;
 }

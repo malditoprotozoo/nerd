@@ -29,6 +29,16 @@ nav ul li {
   cursor: pointer;
 }
 
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
 #home {
  box-shadow: 5px 5px 0px 0px #FF9326;
 }

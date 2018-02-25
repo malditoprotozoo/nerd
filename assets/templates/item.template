@@ -1,10 +1,14 @@
 <div class="item col">
-  <div class="item-image">
-    <a href="#/item/<%= id %>">
-      <img src="<%= item.img %>" alt="<%= item.title %>"/>
-    </a>
-  </div>
-  <div class="item-artist"><%= item.author %></div>
-  <div class="item-title"><%= item.title %></div>
-  <div class="item-price"><%= item.price %></div>
+  <a href="#/item/<%= id %>">
+    <div class="card">
+      <div class="item-image card-img-top">
+          <img src="<%= item.img %>" alt="<%= item.title %>"/>
+      </div>
+      <div class="card-body">
+        <div class="item-artist"><%= item.author %></div>
+        <div class="item-title"><%= item.title %></div>
+        <div class="item-price"><%= item.price %></div>
+      </div>
+    </div>
+  </a>
 </div>

@@ -5,6 +5,21 @@ body {
 body #products {
   margin-left: 10em;
   margin-top: 2em;
+  padding: 1em;
+}
+
+body #products .card {
+  padding: 1em;
+  height: 460px;
+  font-size: 14px;
+}
+
+body #products .item.col {
+  margin-bottom: 1em;
+}
+
+body #products .item.col .item-image {
+  text-align: center;
 }
 
 body #products .item.col .item-image img {

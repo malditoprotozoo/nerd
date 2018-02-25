@@ -1,0 +1,14 @@
+body {
+  overflow-x: hidden;
+}
+
+body #products {
+  margin-left: 10em;
+  margin-top: 2em;
+}
+
+body #products .item.col .item-image img {
+  width: 220px;
+  height: 320px;
+  object-fit: cover;
+}

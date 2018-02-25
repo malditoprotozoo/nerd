@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/malditoprotozoo/nerd/issues"
   },
-  "homepage": "https://github.com/malditoprotozoo/nerd#readme"
+  "homepage": "https://github.com/malditoprotozoo/nerd#readme",
+  "dependencies": {
+    "node-sass": "^4.7.2"
+  }
 }

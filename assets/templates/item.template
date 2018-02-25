@@ -1,4 +1,4 @@
-<div class="item">
+<div class="item col">
   <div class="item-image">
     <a href="#/item/<%= id %>">
       <img src="<%= item.img %>" alt="<%= item.title %>"/>

@@ -181,4 +181,11 @@ app.get('#/categories/:id', function(context) {
   });
 });
 
-
+const checkout = () => {
+  // Creamos un nuevo array sólo con los ids de los objetos comprados
+  let productsStr = Object.keys(cart);
+  // Pasamos cada uno de los items por parseInt para que sean números y no strings
+  let productsId = productsStr.map((i) => {
+    return parseInt(i);
+  });
+};

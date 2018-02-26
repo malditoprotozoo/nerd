@@ -172,11 +172,8 @@ function categories(finalArray) {
 
 // Nueva ruta, para las categorías d:
 app.get('#/categories/:name', function(context) {
-  let cosa = this;
-  console.log(cosa);
   category = this.params['name'];
   category = category.split('-').join(' ');
-  console.log(category)
   $('#categories').show();
   context.app.swap('');
   $.each(app.items, (i, item) => {

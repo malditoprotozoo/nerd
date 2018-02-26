@@ -54,24 +54,32 @@ app.get('#/item/:id', function(context) {
 
 app.post('#/cart', function(context) {
   let itemId = this.params['item_id'];
+  let itemPrice = parseInt(app.item.price.replace('CLP$', '').replace('.', ''));
+  let q = 0;
   let cart = this.session('cart', function() {
     return {};
   });
   if (!cart[itemId]) {
-    cart[itemId] = 0;
+    cart[itemId] = {quantity: 0,
+      price: 0};
   }
-  cart[itemId] += parseInt(this.params['quantity'], 10);
+  cart[itemId].quantity += parseInt(this.params['quantity']);
+  cart[itemId].price += parseInt(itemPrice);
   app.session('cart', cart);
+  console.log(cart);
   this.trigger('update-cart');
 });
 
 app.bind('update-cart', function() {
   let sum = 0;
-  $.each(app.session('cart') || {}, function(id, quantity) {
-    sum += quantity;
+  let total = 0;
+  $.each(app.session('cart') || {}, function(id, product) {
+    sum += product.quantity;
+    total += product.price;
   });
   $('#cart-access')
     .find('#items-cart').text(sum).end()
+    .find('#total-amount').text(total).end()
     .animate({paddingTop: '30px'})
     .animate({paddingTop: '10px'});
 });

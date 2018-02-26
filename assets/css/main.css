@@ -3,11 +3,12 @@ body {
 }
 
 /* sección de productos */
-body #products {
-  margin-left: 10em;
+body #products, body #categories {
+  margin: 0;
   margin-top: 2em;
   padding: 1em;
 }
+
 
 /* card */
 body #products .card {

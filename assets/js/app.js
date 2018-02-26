@@ -6,6 +6,7 @@ $(document).ready(function() {
   $('[data-toggle="tooltip"]').tooltip();
   // lamando a la función para appendear las categorías en 'Filter by categories'
   categories();
+  updateCartSingle();
 });
 
 // App sera la variable de Sammy
@@ -14,6 +15,10 @@ const app = Sammy('#products');
 app.use(Sammy.Template);
 // Y también vamos a usar session y Storage, que permiten almacenar info en local storage
 app.use(Sammy.Session);
+// Creamos un nuevo objeto vacío que almacenará las compras
+let cart = app.session('cart', function() {
+  return {};
+});
 
 app.around(callback => {
   fetch('assets/data/data.json')
@@ -61,9 +66,6 @@ app.post('#/cart', function(context) {
   let itemId = this.params['item_id'];
   let itemPrice = parseInt(app.item.price.replace('CLP$', '').replace('.', ''));
   let q = 0;
-  let cart = this.session('cart', function() {
-    return {};
-  });
   if (!cart[itemId]) {
     cart[itemId] = {quantity: 0,
       price: 0};
@@ -74,6 +76,13 @@ app.post('#/cart', function(context) {
   console.log(cart);
   this.trigger('update-cart');
 });
+
+const updateCartSingle = function() {
+  $('body').on('click', '.btn-add-to-cart', function() {
+    let itemId = $(this).data('value');
+    let itemPrice = parseInt($(this).data('price').replace('CLP$', '').replace('.', ''));
+  });
+};
 
 app.bind('update-cart', function() {
   let sum = 0;

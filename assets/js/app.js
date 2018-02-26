@@ -168,7 +168,9 @@ function categories(finalArray) {
     })
 }
 
-app.get('#/categories/:id', context => {
+app.get('#/categories/:id', function(context) {
+  let cosa = this;
+  console.log(cosa);
   $('#categories').show();
   context.app.swap('');
   $.each(app.items, (i, item) => {

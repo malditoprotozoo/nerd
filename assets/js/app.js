@@ -159,25 +159,34 @@ function categories(finalArray) {
             counter = counter + 1; /* cuenta cuántas veces existe */
           }
         }
-        let id = index;
+        let name = element;
+        name = name.split(' ').join('-');
+        //console.log(name)
         //console.log(counter);
-        $('#categories ul').append(`<li><a href="#/categories/${id}">${element} <span class="categorie-counter">(${counter})</span></a></li>`);
+        $('#categories ul').append(`<li><a href="#/categories/${name}">${element} <span class="categorie-counter">(${counter})</span></a></li>`);
       })
       // retornar categorías únicas, sin repetirse
       return catArr.unique();
     })
 }
 
-app.get('#/categories/:id', function(context) {
+// Nueva ruta, para las categorías d:
+app.get('#/categories/:name', function(context) {
   let cosa = this;
   console.log(cosa);
+  category = this.params['name'];
+  category = category.split('-').join(' ');
+  console.log(category)
   $('#categories').show();
   context.app.swap('');
   $.each(app.items, (i, item) => {
-    context.render('assets/templates/item.template', {id: i,
-      item: item})
-      .appendTo(context.$element());
-      item.id = i;
+    let searching = item.categ
+    if (item.categories.indexOf(category) >= 0) {
+      context.render('assets/templates/item.template', {id: i,
+        item: item})
+        .appendTo(context.$element());
+        item.id = i;
+      }
   });
 });
 

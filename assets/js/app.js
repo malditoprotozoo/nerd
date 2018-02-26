@@ -65,7 +65,6 @@ app.get('#/item/:id', function(context) {
 app.post('#/cart', function(context) {
   let itemId = this.params['item_id'];
   let itemPrice = parseInt(app.item.price.replace('CLP$', '').replace('.', ''));
-  let q = 0;
   if (!cart[itemId]) {
     cart[itemId] = {quantity: 0,
       price: 0};

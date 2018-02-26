@@ -169,7 +169,7 @@ nav ul li a:hover {
 body #categories {
   margin-top: 3em;
   height: 100%;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 body #categories .container-categories {
@@ -188,7 +188,7 @@ body #categories .container-categories {
 }
 
 #categories li a {
-  color: #6C7585;
+  color: #0FAAB1;
   font-weight: 600;
 }
 
@@ -196,11 +196,16 @@ body #categories .container-categories {
   background-color: #F8F9FA;
 }
 
-#categories .badge {
-  background-color: #332C1F;
-  color: white;
+#categories a:hover {
+  color: #EB265D;
+  text-decoration: none;
+  transition: all .3s;
 }
 
+#categories .badge {
+  background-color: #0FAAB1;
+  color: white;
+}
 
 /* extra */
 .vertical-align {

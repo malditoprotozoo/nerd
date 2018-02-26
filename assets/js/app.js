@@ -32,6 +32,7 @@ app.get('#/', context => {
     context.render('assets/templates/item.template', {id: i,
       item: item})
       .appendTo(context.$element());
+      item.id = i;
   });
 });
 

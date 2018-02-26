@@ -163,7 +163,7 @@ function categories(finalArray) {
         name = name.split(' ').join('-');
         //console.log(name)
         //console.log(counter);
-        $('#categories ul').append(`<li><a href="#/categories/${name}">${element} <span class="categorie-counter">(${counter})</span></a></li>`);
+        $('#categories ul').append(`<li class="list-group-item d-flex justify-content-between align-items-center"><a href="#/categories/${name}">${element}</a><span class="categorie-counter badge badge-pill">${counter}</span></li> `);
       })
       // retornar categorías únicas, sin repetirse
       return catArr.unique();

@@ -166,10 +166,39 @@ nav ul li a:hover {
 }
 
 /* categorías */
-#categories {
+body #categories {
+  margin-top: 3em;
+  height: 100%;
+  padding: 0 10px;
+}
+
+body #categories .container-categories {
   border: 1px solid grey;
   border-radius: 3px;
-  height: 100%;
+}
+
+#categories h5 {
+  padding: 20px 20px 2px 20px;
+}
+
+#categories ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px 0 0 0;
+}
+
+#categories li a {
+  color: #6C7585;
+  font-weight: 600;
+}
+
+#categories li:hover {
+  background-color: #F8F9FA;
+}
+
+#categories .badge {
+  background-color: #332C1F;
+  color: white;
 }
 
 

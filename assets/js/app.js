@@ -161,7 +161,7 @@ function categories(finalArray) {
         }
         let id = index;
         //console.log(counter);
-        $('#categories ul').append(`<li><a href="/categories/${id}">${element} <span class="categorie-counter">(${counter})</span></a></li>`);
+        $('#categories ul').append(`<li><a href="#/categories/${id}">${element} <span class="categorie-counter">(${counter})</span></a></li>`);
       })
       // retornar categorías únicas, sin repetirse
       return catArr.unique();

@@ -63,10 +63,13 @@ nav ul li a:hover {
 
 /* subnav */
 #sub-nav {
-  height: 60px;
   width: 100%;
   background-color: #8B635C;
-  padding: 10px 60px;
+  padding: 0 60px;
+}
+
+#sub-nav .row {
+  padding: 5px 0;
 }
 
 #sub-nav input {
@@ -82,4 +85,11 @@ nav ul li a:hover {
 
 #cart-access .b-span {
   border: 1px solid black;
+}
+
+
+/* extra */
+.vertical-align {
+  display: flex;
+  align-items: center;
 }

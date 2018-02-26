@@ -167,3 +167,16 @@ function categories(finalArray) {
       return catArr.unique();
     })
 }
+
+app.get('#/categories/:id', context => {
+  $('#categories').show();
+  context.app.swap('');
+  $.each(app.items, (i, item) => {
+    context.render('assets/templates/item.template', {id: i,
+      item: item})
+      .appendTo(context.$element());
+      item.id = i;
+  });
+});
+
+

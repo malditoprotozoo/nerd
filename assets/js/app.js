@@ -80,6 +80,14 @@ const updateCartSingle = function() {
   $('body').on('click', '.btn-add-to-cart', function() {
     let itemId = $(this).data('value');
     let itemPrice = parseInt($(this).data('price').replace('CLP$', '').replace('.', ''));
+    if (!cart[itemId]) {
+      cart[itemId] = {quantity: 0,
+        price: 0};
+    }
+    cart[itemId].quantity ++;
+    cart[itemId].price += itemPrice;
+    app.session('cart', cart);
+    app.trigger('update-cart');
   });
 };
 

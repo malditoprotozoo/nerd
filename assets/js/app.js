@@ -57,6 +57,20 @@ app.get('#/item/:id', function(context) {
   this.partial('assets/templates/item_detail.template');
 });
 
+app.get('#/cart', function(context) {
+  $('#categories').hide();
+  context.app.swap('');
+  context.render('assets/templates/cart.template')
+    .appendTo(context.$element());
+});
+
+app.get('#/wishlist', function(context) {
+  $('#categories').hide();
+  context.app.swap('');
+  context.render('assets/templates/wishlist.template')
+    .appendTo(context.$element());
+});
+
 /* Ahora vamos a definir un nuevo método. En lugar de get, usaremos post
 * Cuando usamos GET, le pedimos datos a determinado origen
 * Cuando usamos POST, le enviamos datos a determinado destinatario

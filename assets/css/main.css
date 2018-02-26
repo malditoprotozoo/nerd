@@ -12,13 +12,23 @@ body #products, body #categories {
 
 /* card */
 body #products .card {
+  position: relative;
   padding: 1em;
-  height: 460px;
+  height: 500px;
   font-size: 14px;
+  border-radius: 0;
+  border: 1px solid #332C1F;
+  box-shadow: 7px 7px 0px 0px #332C1F;
+}
+
+body #products .card:hover {
+  bottom: -7px;
+  right: -7px;
+  box-shadow: 0px 0px 0px 0px;
 }
 
 body #products .item.col {
-  margin-bottom: 1em;
+  margin-bottom: 3em;
 }
 
 /* imagen de card */
@@ -27,8 +37,8 @@ body #products .item.col .item-image {
 }
 
 body #products .item.col .item-image img {
-  width: 160px;
-  height: 260px;
+  width: 200px;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -85,4 +95,9 @@ body #products a:hover {
 /* otros de card */
 body #products .card hr {
   margin: 0;
+}
+
+
+.col {
+  padding: 0 20px;
 }

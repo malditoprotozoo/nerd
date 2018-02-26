@@ -73,8 +73,38 @@ nav ul li a:hover {
 }
 
 #sub-nav input {
-  width: 80%;
+  height: 35px;
+  width: 90%;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  padding: 0 10px;
+  border-right: 1px solid #332C1F;
+  font-size: 14px;
 }
+
+#sub-nav input::placeholder {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#sub-nav .input {
+  width: 100%;
+  border: 1px solid #332C1F;
+  background-color: #F0EFF4;
+}
+
+#sub-nav .input button {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  width: 9%;
+  height: 100%;
+  background-color: transparent;
+  color: #332C1F;
+}
+
 
 /* acceso a carrito */
 #cart-access {

@@ -1,6 +1,7 @@
 $(document).ready(function() {
   // Acá le decimos a Sammy que comience a correr cuando el sitio cargue
   app.run('#/');
+  var cart = {};
 });
 
 // App sera la variable de Sammy
@@ -42,7 +43,16 @@ app.get('#/item/:id', function(context) {
   this.partial('assets/templates/item_detail.template');
 });
 
-
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
+/* Ahora vamos a definir un nuevo método. En lugar de get, usaremos post
+* Cuando usamos GET, le pedimos datos a determinado origen
+* Cuando usamos POST, le enviamos datos a determinado destinatario
+*/
+
+app.post('#/cart', function(context) {
+  let itemId = this.params['item_id'];
+  console.log(itemId);
+});

@@ -26,6 +26,7 @@ app.around(callback => {
 // Con app.get creamos una nueva ruta. Context es el espacio en dónde nos ubicamos
 // CALLBACK
 app.get('#/', context => {
+  $('#categories').show();
   context.app.swap('');
   $.each(app.items, (i, item) => {
     context.render('assets/templates/item.template', {id: i,
@@ -36,7 +37,8 @@ app.get('#/', context => {
 
 // Nueva ruta, la que se creará al hacer click en cada imagen
 app.get('#/item/:id', function(context) {
-  /* 
+  $('#categories').hide();
+  /*
   * En este caso no usamos funciones flecha porque usaremos this
   * Dentro de este context, this será el producto en el que el usuario hizo click
   */

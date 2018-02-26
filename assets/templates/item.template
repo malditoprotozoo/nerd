@@ -1,14 +1,17 @@
 <div class="item col">
-  <a href="#/item/<%= id %>">
-    <div class="card">
-      <div class="item-image card-img-top">
+  <div class="card">
+    <div class="item-image card-img-top">
+        <a href="#/item/<%= id %>">
           <img src="<%= item.img %>" alt="<%= item.title %>"/>
-      </div>
-      <div class="card-body">
-        <div class="item-artist"><%= item.author %></div>
-        <div class="item-title"><%= item.title %></div>
-        <div class="item-price"><%= item.price %></div>
-      </div>
+        </a>
     </div>
-  </a>
+    <div class="card-body">
+      <hr>
+      <div class="item-title"><h5 class="card-title"><a href="#/item/<%= id %>"><%= item.title %></a></h5></div>
+      <div class="item-artist"><h6 class="card-subtitle mb-2 text-muted"><%= item.author %></h6></div>
+      <div class="item-price"><%= item.price %></div>
+      <hr>
+      <a href="#/" class="btn" data-toggle="tooltip" data-placement="bottom" title="Add to cart!"><i class="fas fa-cart-plus fa-lg"></i></a>
+    </div>
+  </div>
 </div>

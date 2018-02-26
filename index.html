@@ -16,7 +16,7 @@
 </head>
   <body>
     <nav class="navbar navbar-light">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="#/">
         <img src="assets/img/nerd-login.png" alt="">
       </a>
       <ul class="left">
@@ -26,13 +26,19 @@
       </ul>
     </nav>
     <div id="sub-nav">
-      <input type="text" class="search-input" placeholder="What are you shopping for?">
-      <button>lupa</button>
-      <!-- se supone que cart-access entero es el acceso al carro -->
-      <div class="right" id="cart-access">
-        <span class="b-span">CLP$<span id="total-amount">0</span></span>
-        <span class="b-span"><span id="items-cart">0</span> ítems</span>
-        <span class="b-span"><i class="fas fa-shopping-cart"></i></span>
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <input type="text" class="search-input" placeholder="What are you shopping for?">
+          <button>lupa</button>
+        </div>
+        <!-- se supone que cart-access entero es el acceso al carro -->
+        <div class="col-12 col-md-4">
+          <div class="right" id="cart-access">
+            <span class="b-span">CLP$<span id="total-amount">0</span></span>
+            <span class="b-span"><span id="items-cart">0</span> ítems</span>
+            <span class="b-span"><i class="fas fa-shopping-cart"></i></span>
+          </div>
+        </div>
       </div>
     </div>
 

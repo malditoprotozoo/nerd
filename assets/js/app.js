@@ -41,3 +41,8 @@ app.get('#/item/:id', function(context) {
   }
   this.partial('assets/templates/item_detail.template');
 });
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

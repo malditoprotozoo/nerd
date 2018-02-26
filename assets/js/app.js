@@ -151,7 +151,7 @@ function categories(finalArray) {
       //guardando en una variable el nuevo array con los elementos filtrados
       let catArrFilter = catArr.unique();
       // recorremos cada categoría única
-      catArrFilter.forEach(function(element) {
+      catArrFilter.forEach(function(element, index) {
         let counter = 0; /* inicializamos un contador para saber cuántos elementos de la data poseen
         la categoría que estamos recorriendo */
         for (let i = 0; i < catArr.length; i ++) {
@@ -159,12 +159,11 @@ function categories(finalArray) {
             counter = counter + 1; /* cuenta cuántas veces existe */
           }
         }
+        let id = index;
         //console.log(counter);
-        $('#categories ul').append(`<li>${element} <span class="categorie-counter">(${counter})</span></li>`);
+        $('#categories ul').append(`<li><a href="/categories/${id}">${element} <span class="categorie-counter">(${counter})</span></a></li>`);
       })
       // retornar categorías únicas, sin repetirse
       return catArr.unique();
     })
 }
-
-

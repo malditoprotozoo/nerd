@@ -4,6 +4,8 @@ $(document).ready(function() {
   // Inicializamos esto para que se sumen los elementos que quedaron en el carrito en la última sesión
   app.trigger('update-cart');
   $('[data-toggle="tooltip"]').tooltip();
+  // lamando a la función para appendear las categorías en 'Filter by categories'
+  categories();
 });
 
 // App sera la variable de Sammy
@@ -86,3 +88,53 @@ app.bind('update-cart', function() {
     .animate({paddingTop: '30px'})
     .animate({paddingTop: '10px'});
 });
+
+
+/**
+ * función para filtrar un array y devolver los elementos pero sin sus duplicados
+ * fuente y explicación profunda:
+ * http://www.etnassoft.com/2011/06/24/array-unique-eliminar-valores-duplicados-de-un-array-en-javascript/
+ */
+Array.prototype.unique=function(a){
+  return function() {return this.filter(a)}}(function(a,b,c){return c.indexOf(a,b+1)<0
+});
+
+
+// dándole a Filter by Categories las categorías disponibles en el data.json
+function categories(finalArray) {
+  // aquí guardaremos todas las categorías
+  let catArr = [];
+  fetch('assets/data/data.json')
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function(data) {
+      //pusheando a catArr todas las categorías
+      data.forEach(function(element) { /* aquí recorremos cada elemento de la data */
+        //console.log(element.categories)
+        element.categories.forEach(function(el) { /* element.categories es un array de categorías de un elemento*/
+          catArr.push(el); /* aquí pusheamos a catArr cada categría en ese array */
+        });
+      });
+      //console.log(catArr);
+      //console.log(catArr.unique())
+      //guardando en una variable el nuevo array con los elementos filtrados
+      let catArrFilter = catArr.unique();
+      // recorremos cada categoría única
+      catArrFilter.forEach(function(element) {
+        let counter = 0; /* inicializamos un contador para saber cuántos elementos de la data poseen
+        la categoría que estamos recorriendo */
+        for (let i = 0; i < catArr.length; i ++) {
+          if (element == catArr[i]) { /* comparamos el elemento actual con todos los elementos de catArr */
+            counter = counter + 1; /* cuenta cuántas veces existe */
+          }
+        }
+        //console.log(counter);
+        $('#categories ul').append(`<li>${element} <span class="categorie-counter">(${counter})</span></li>`);
+      })
+      // retornar categorías únicas, sin repetirse
+      return catArr.unique();
+    })
+}
+
+

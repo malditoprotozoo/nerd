@@ -203,6 +203,7 @@ const checkout = () => {
   });
   productsId.map(i => {
     cart[i].title = app.items[i].title;
+    cart[i].img = app.items[i].img;
   });
   return cart;
 };

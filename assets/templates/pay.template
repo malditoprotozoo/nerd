@@ -1,7 +1,7 @@
 <div class="col-5 pay-big-container">
-  <div class="pay-container">
-    <div class="total"> total here </div>
-    <div class="pay-button"><button id="pay"> Pay </button></div>
-    <div class="cancel-button"><button id="cancel"> Cancel Order </button></div>
+  <div class="pay-container text-center">
+    <div class="total-container"> <span class="label">Total</span> <span id="total">total here</span> </div>
+    <div class="pay-button"><a id="pay" href="#/cart/payment" class="btn"> Pay </a></div>
+    <div class="cancel-button"><a id="cancel" class="btn"> Cancel Order </a></div>
   </div>
 </div>

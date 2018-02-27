@@ -72,7 +72,7 @@ body #products .card .btn:hover {
 }
 
 /* precio */
-body #products .item-price {
+body #products .card .item-price {
   position: absolute;
   bottom: -1px;
   right: 14px;

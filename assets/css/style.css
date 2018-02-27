@@ -450,5 +450,5 @@ a#cancel.btn:hover, a#pay.btn:hover {
 
 /* escondiendo la wishlist mientras no la implementamos */
 #wishlist-btn {
-  display: hide;
+  display: none;
 }

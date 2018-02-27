@@ -108,10 +108,6 @@ app.post('#/cart', function(context) {
   this.trigger('update-cart');
 });
 
-app.post('#/cart/payment', function(context) {
-
-});
-
 const updateCartSingle = function() {
   $('body').on('click', '.btn-add-to-cart', function() {
     let itemId = $(this).data('value');
@@ -257,6 +253,9 @@ $('#products').on('click', '.remove', function() {
   location.reload();
 });
 
-// then(function() {
-//   $('#products').append(`<div class="col-12"><button id="cancel">Cancel</button></div>`);
-// });
+app.get('#/cart/payment', function(context) {
+  $('#categories').hide();
+  context.app.swap('');
+  context.render('assets/templates/payment.template')
+    .appendTo(context.$element());
+});

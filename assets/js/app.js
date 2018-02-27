@@ -35,6 +35,7 @@ app.around(callback => {
 // Con app.get creamos una nueva ruta. Context es el espacio en dónde nos ubicamos
 // CALLBACK
 app.get('#/', context => {
+  $('#sub-nav input').val('');
   $('#categories').show();
   context.app.swap('');
   $.each(app.items, (i, item) => {
@@ -47,6 +48,7 @@ app.get('#/', context => {
 
 // Nueva ruta, la que se creará al hacer click en cada imagen
 app.get('#/item/:id', function(context) {
+  $('#sub-nav input').val('');
   $('#categories').hide();
   /*
   * En este caso no usamos funciones flecha porque usaremos this
@@ -60,6 +62,7 @@ app.get('#/item/:id', function(context) {
 });
 
 app.get('#/cart', function(context) {
+  $('#sub-nav input').val('');
   checkout();
   $('#categories').hide();
   context.app.swap('');
@@ -70,6 +73,7 @@ app.get('#/cart', function(context) {
 });
 
 app.get('#/wishlist', function(context) {
+  $('#sub-nav input').val('');
   $('#categories').hide();
   context.app.swap('');
   context.render('assets/templates/wishlist.template')
@@ -179,6 +183,7 @@ function categories(finalArray) {
 
 // Nueva ruta, para las categorías d:
 app.get('#/categories/:name', function(context) {
+  $('#sub-nav input').val('');
   category = this.params['name'];
   category = category.split('-').join(' ');
   $('#categories').show();
@@ -208,3 +213,29 @@ const checkout = () => {
   });
   return cart;
 };
+
+
+$('#sub-nav').on('change', 'input', function() {
+  let title = $(this).val();
+  title = title.split(' ').join('-');
+  $('#go-search').attr('href', `#/title/${title}`)
+})
+
+// Nueva ruta, para los nombres (BUSCADOR)
+app.get('#/title/:title', function(context) {
+  title = this.params['title'];
+  title = title.split('-').join(' ');
+  title = title.toLowerCase();
+  $('#categories').show();
+  context.app.swap('');
+  $.each(app.items, (i, item) => {
+    let searching = item.title
+    searching = searching.toLowerCase()
+    if (searching.indexOf(title) >= 0) {
+      context.render('assets/templates/item.template', {id: i,
+        item: item})
+        .appendTo(context.$element());
+        item.id = i;
+      }
+  });
+});

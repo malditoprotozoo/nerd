@@ -102,7 +102,9 @@ nav ul li a:hover {
   background-color: #F0EFF4;
 }
 
-#sub-nav .input button {
+#sub-nav .input a {
+  display: inline-block;
+  text-align: center;
   padding: 0;
   border: 0;
   margin: 0;
@@ -111,6 +113,10 @@ nav ul li a:hover {
   background-color: transparent;
   color: #332C1F;
   cursor: pointer;
+}
+
+#sub-nav .input a:hover {
+  color: #FF9326;
 }
 
 #sub-nav input:focus, #sub-nav .input button:focus {

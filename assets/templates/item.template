@@ -11,7 +11,7 @@
       <div class="item-artist"><h6 class="card-subtitle mb-2 text-muted"><%= item.author %></h6></div>
       <div class="item-price"><%= item.price %></div>
       <hr>
-      <a href="#/" class="btn btn-add-to-cart" data-toggle="tooltip" data-placement="bottom" title="Add to cart!" data-value="<%=item.id%>" data-price="<%=item.price%>"><i class="fas fa-cart-plus fa-lg"></i></a>
+      <a class="btn btn-add-to-cart" data-toggle="tooltip" data-placement="bottom" title="Add to cart!" data-value="<%=item.id%>" data-price="<%=item.price%>"><i class="fas fa-cart-plus fa-lg"></i></a>
     </div>
   </div>
 </div>

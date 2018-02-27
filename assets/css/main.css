@@ -29,6 +29,7 @@ body #products .card:hover {
 
 body #products .item.col {
   margin-bottom: 3em;
+  max-width: 250px;
 }
 
 /* imagen de card */

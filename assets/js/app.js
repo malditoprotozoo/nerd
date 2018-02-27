@@ -7,6 +7,13 @@ $(document).ready(function() {
   // lamando a la función para appendear las categorías en 'Filter by categories'
   categories();
   updateCartSingle();
+  // Cancelando la compra
+  $('body').on('click', '#cancel', function() {
+    app.stores.session.clearAll();
+    $('.item-cart-container').remove();
+    app.trigger('update-cart');
+    location.reload();
+  });
 });
 
 // App sera la variable de Sammy
@@ -70,6 +77,8 @@ app.get('#/cart', function(context) {
     context.render('assets/templates/cart.template', {item:item})
       .appendTo(context.$element());
   });
+  context.render('assets/templates/cancel.template')
+    .appendTo(context.$element());
 });
 
 app.get('#/wishlist', function(context) {
@@ -237,9 +246,9 @@ app.get('#/title/:title', function(context) {
 
 $('#products').on('click', '.remove', function() {
   let id = $(this).attr('id');
-  console.log(id)
-  console.log(cart[id])
   delete cart[id];
   console.log(cart);
   //aquí debería actualizar el storage en base a eso y volver a cargar la ruta (?)
-})
+  app.stores.session.clear(cart[id]);
+  location.reload();
+});

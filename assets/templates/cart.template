@@ -1,5 +1,5 @@
 
-<div class="col-7">
+<div class="col-12">
   <div class="row item-cart-container vertical-align text-center col-12">
     <div class="cart-img col-2">
       <img src="<%= item.img %>" alt="<%= item.title %>"/>

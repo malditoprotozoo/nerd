@@ -3,15 +3,21 @@
     <img src="<%= app.item.img %>" alt="<%= app.item.title %>"/>
   </div>
   <div class="item-info">
+    <div class="item-categories"><%= app.item.categories %></div>
     <div class="item-artist"><%= app.item.author %></div>
     <div class="item-title"><%= app.item.title %></div>
     <div class="item-price"><%= app.item.price %></div>
+    <div class="item-details-language"><%= app.item.details['language'] %></div>
+    <div class="item-description"><%= app.item.description %></div>
+    <div class="item-details-pub-date"><%= app.item.details['publication date'] %></div>
+    <div class="item-details-pub-country"><%= app.item.details['publication city/country'] %></div>
+    <div class="item-details-publisher"><%= app.item.details['publisher'] %></div>
     <div class="item-form">
       <form action="#/cart" method="post">
         <input type="hidden" name="item_id" value="<%= params['id'] %>" />
         <p>
           <label>Quantity:</label>
-          <input type="text" size="2" name="quantity" value="1" />
+          <input type="number" size="2" name="quantity" value="1" />
         </p>
         <p><input type="submit" value="Add to Cart" /></p>
       </form>

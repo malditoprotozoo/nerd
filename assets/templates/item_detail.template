@@ -1,32 +1,35 @@
-<div class="item-detail">
-  <div class="item-image">
-    <img src="<%= app.item.img %>" alt="<%= app.item.title %>"/>
+<div class="item-detail row" id="item-detail-container">
+  <div class="item-info col-8 row">
+  <div class="item-title col-12"><span></span> <%= app.item.title %></div>
+    <div class="item-image col-4">
+      <img src="<%= app.item.img %>" alt="<%= app.item.title %>"/>
+    </div>
+    <div class="item-info-container col-8">
+      <div class="item-categories"><span>Categories:</span> <%= app.item.categories %></div>
+      <div class="item-artist"><span>Author:</span> <%= app.item.author %></div>
+      <div class="item-price"><span>prr</span> <%= app.item.price %></div>
+      <div class="item-details-language"><span>Language: </span> <%= app.item.details['language'] %></div>
+      <div class="item-details-format"><span>Format: </span> <%= app.item.details['format'] %></div>
+      <div class="item-description"><span></span> <%= app.item.description %></div>
+      <div class="item-details-pub-date"><span>Publication date:</span> <%= app.item.details['publication date'] %></div>
+      <div class="item-details-pub-country"><span>Publication City/Country:</span> <%= app.item.details['publication city/country'] %></div>
+      <div class="item-details-publisher"><span>Publisher:</span> <%= app.item.details['publisher'] %></div>
+      <div class="item-link">
+        <a href="https://www.bookdepository.com/search?searchTerm=<%= app.item.title %>&search=Find+book">Buy this item on Bookdepository</a>
+      </div>
+      <div class="back-link">
+        <a href="#/">&laquo; Back to Items</a>
+      </div>
+    </div>
   </div>
-  <div class="item-info">
-    <div class="item-categories"><%= app.item.categories %></div>
-    <div class="item-artist"><%= app.item.author %></div>
-    <div class="item-title"><%= app.item.title %></div>
-    <div class="item-price"><%= app.item.price %></div>
-    <div class="item-details-language"><%= app.item.details['language'] %></div>
-    <div class="item-description"><%= app.item.description %></div>
-    <div class="item-details-pub-date"><%= app.item.details['publication date'] %></div>
-    <div class="item-details-pub-country"><%= app.item.details['publication city/country'] %></div>
-    <div class="item-details-publisher"><%= app.item.details['publisher'] %></div>
-    <div class="item-form">
-      <form action="#/cart" method="post">
-        <input type="hidden" name="item_id" value="<%= params['id'] %>" />
-        <p>
-          <label>Quantity:</label>
-          <input type="number" size="2" name="quantity" value="1" />
-        </p>
-        <p><input type="submit" value="Add to Cart" /></p>
-      </form>
-    </div>
-    <div class="item-link">
-      <a href="https://www.bookdepository.com/search?searchTerm=<%= app.item.title %>&search=Find+book">Buy this item on Bookdepository</a>
-    </div>
-    <div class="back-link">
-      <a href="#/">&laquo; Back to Items</a>
-    </div>
+  <div class="item-form col-4">
+    <form action="#/cart" method="post">
+      <input type="hidden" name="item_id" value="<%= params['id'] %>" />
+      <p>
+        <label>Quantity:</label>
+        <input type="number" name="quantity" value="1" min="0" />
+      </p>
+      <p><input type="submit" value="Add to Cart" /></p>
+    </form>
   </div>
 </div>

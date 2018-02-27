@@ -60,10 +60,13 @@ app.get('#/item/:id', function(context) {
 });
 
 app.get('#/cart', function(context) {
+  checkout();
   $('#categories').hide();
   context.app.swap('');
-  context.render('assets/templates/cart.template')
-    .appendTo(context.$element());
+  $.each(cart, (i, item) => {
+    context.render('assets/templates/cart.template', {item:item})
+      .appendTo(context.$element());
+  });
 });
 
 app.get('#/wishlist', function(context) {

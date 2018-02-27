@@ -1,1 +1,3 @@
-<p>HOLA, SOY TU CARRITO BIEN CANDENTE</p>
+<div class="col"><%= item.quantity %></div>
+<div class="col"><%= item.title %></div>
+<div class="col"><%= item.price %></div>

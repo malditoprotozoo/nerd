@@ -70,6 +70,7 @@ app.get('#/cart', function(context) {
   $('#categories').hide();
   $('#sub-nav input').val('');
   checkout();
+  
   context.app.swap('');
   $.each(cart, (i, item) => {
     context.render('assets/templates/cart.template', {item:item})

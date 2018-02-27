@@ -19,6 +19,8 @@ app.use(Sammy.Session);
 let cart = app.session('cart', function() {
   return {};
 });
+// Creamos un array que contendrá todos los datos de los elementos comprados
+let cartCheckout = [];
 
 app.around(callback => {
   fetch('assets/data/data.json')
@@ -82,11 +84,11 @@ app.post('#/cart', function(context) {
   if (!cart[itemId]) {
     cart[itemId] = {quantity: 0,
       price: 0};
+      app.items[itemId].quantity = 0;
   }
   cart[itemId].quantity += parseInt(this.params['quantity']);
   cart[itemId].price += parseInt(itemPrice);
   app.session('cart', cart);
-  console.log(cart);
   this.trigger('update-cart');
 });
 
@@ -97,8 +99,10 @@ const updateCartSingle = function() {
     if (!cart[itemId]) {
       cart[itemId] = {quantity: 0,
         price: 0};
+      app.items[itemId].quantity = 0;
     }
     cart[itemId].quantity ++;
+    app.items[itemId].quantity ++;
     cart[itemId].price += itemPrice;
     app.session('cart', cart);
     app.trigger('update-cart');
@@ -164,11 +168,11 @@ function categories(finalArray) {
         //console.log(name)
         //console.log(counter);
         $('#categories ul').append(`<li class="list-group-item d-flex justify-content-between align-items-center"><a href="#/categories/${name}">${element}</a><span class="categorie-counter badge badge-pill">${counter}</span></li> `);
-      })
+      });
       // retornar categorías únicas, sin repetirse
       return catArr.unique();
-    })
-}
+    });
+};
 
 // Nueva ruta, para las categorías d:
 app.get('#/categories/:name', function(context) {
@@ -194,4 +198,8 @@ const checkout = () => {
   let productsId = productsStr.map((i) => {
     return parseInt(i);
   });
+  productsId.map(i => {
+    cart[i].title = app.items[i].title;
+  });
+  return cart;
 };

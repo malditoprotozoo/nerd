@@ -265,12 +265,15 @@ app.get('#/cart/payment', function(context) {
 /*
  * calculando total d:
  */
-let total = Object.keys(cart)
-let totalPrice = 0;
+var calculateTotalPrice = () => {
+  let total = Object.keys(cart)
+  let totalPrice = 0;
 
-total.forEach(function(element) {
-  let uniquePrice = cart[element].price;
-  uniquePrice = cart[element].price * cart[element].quantity;
-  totalPrice = totalPrice + uniquePrice;
-})
+  total.forEach(function(element) {
+    let uniquePrice = cart[element].price;
+    uniquePrice = cart[element].price * cart[element].quantity;
+    totalPrice = totalPrice + uniquePrice;
+  });
+  return totalPrice;
+};
 

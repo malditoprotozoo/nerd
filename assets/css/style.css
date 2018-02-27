@@ -267,6 +267,68 @@ body #categories .container-categories {
   font-weight: bold;
 }
 
+#item-detail-container .item-link {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-weight: 500;
+}
+
+#item-detail-container .back-link {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  font-weight: 500;
+}
+
+#item-detail-container a:hover {
+  color: #EB265D;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+#item-detail-container .item-price {
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 16px;
+  background-color: #FF9326;
+  color: white;
+  padding: 10px;
+}
+
+#item-detail-container .form-container {
+  padding: 0 25px;
+}
+
+#item-detail-container .item-form {
+  padding: 20px 15px;
+  border: 1px solid grey;
+}
+
+#item-detail-container .form-container .quantity {
+  text-align: center;
+  padding: 20px 0;
+}
+
+#item-detail-container .form-container .cart-button {
+  margin-bottom: 0;
+}
+
+#item-detail-container .item-form .btn {
+  width: 100%;
+  background-color: #0FAAB1;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#item-detail-container .item-form .btn:hover {
+  background-color: #EB265D;
+}
+
 /* extra */
 .vertical-align {
   display: flex;

@@ -26,8 +26,6 @@ app.use(Sammy.Session);
 let cart = app.session('cart', function() {
   return {};
 });
-// Creamos un array que contendrá todos los datos de los elementos comprados
-let cartCheckout = [];
 
 app.around(callback => {
   fetch('assets/data/data.json')
@@ -69,9 +67,9 @@ app.get('#/item/:id', function(context) {
 });
 
 app.get('#/cart', function(context) {
+  $('#categories').hide();
   $('#sub-nav input').val('');
   checkout();
-  $('#categories').hide();
   context.app.swap('');
   $.each(cart, (i, item) => {
     context.render('assets/templates/cart.template', {item:item})
@@ -248,9 +246,8 @@ $('#products').on('click', '.remove', function() {
   let id = $(this).attr('id');
   delete cart[id];
   console.log(cart);
-  //aquí debería actualizar el storage en base a eso y volver a cargar la ruta (?)
-  app.stores.session.clear(cart[id]);
-
+  // actualizando localstorage
+  app.session('cart', cart);
   location.reload();
 });
 

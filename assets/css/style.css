@@ -369,6 +369,17 @@ body #categories .container-categories {
   letter-spacing: 1px;
 }
 
+.item-cart-container .remove {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  color: #B7E01F;
+  cursor: pointer;
+}
+
 /* extra */
 .vertical-align {
   display: flex;

@@ -20,7 +20,7 @@
       <div class="item-details-publisher"><span>Publisher:</span> <%= app.item.details['publisher'] %></div>
     </div>
     <div class="item-link">
-      <a href="https://www.bookdepository.com/search?searchTerm=<%= app.item.title %>&search=Find+book">Buy this item on Bookdepository</a>
+      <a href="https://www.bookdepository.com/search?searchTerm=<%= app.item.title %>&search=Find+book" target="_blank">Buy this item on Bookdepository</a>
     </div>
     <div class="back-link">
       <a href="#/">&laquo; Back to Items</a>

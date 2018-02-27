@@ -152,13 +152,10 @@ function categories(finalArray) {
     .then(function(data) {
       //pusheando a catArr todas las categorías
       data.forEach(function(element) { /* aquí recorremos cada elemento de la data */
-        //console.log(element.categories)
         element.categories.forEach(function(el) { /* element.categories es un array de categorías de un elemento*/
           catArr.push(el); /* aquí pusheamos a catArr cada categría en ese array */
         });
       });
-      //console.log(catArr);
-      //console.log(catArr.unique())
       //guardando en una variable el nuevo array con los elementos filtrados
       let catArrFilter = catArr.unique();
       // recorremos cada categoría única
@@ -172,8 +169,6 @@ function categories(finalArray) {
         }
         let name = element;
         name = name.split(' ').join('-');
-        //console.log(name)
-        //console.log(counter);
         $('#categories ul').append(`<li class="list-group-item d-flex justify-content-between align-items-center"><a href="#/categories/${name}">${element}</a><span class="categorie-counter badge badge-pill">${counter}</span></li> `);
       });
       // retornar categorías únicas, sin repetirse
@@ -240,12 +235,11 @@ app.get('#/title/:title', function(context) {
   });
 });
 
-
 $('#products').on('click', '.remove', function() {
   let id = $(this).attr('id');
   console.log(id)
   console.log(cart[id])
   delete cart[id];
   console.log(cart);
-  //aquí debería actualizar el storage en base a eso
+  //aquí debería actualizar el storage en base a eso y volver a cargar la ruta (?)
 })

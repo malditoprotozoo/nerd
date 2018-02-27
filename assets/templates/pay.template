@@ -1,0 +1,6 @@
+<div class="col-5">
+  <div class="pay-container">
+    <div class="total"> total here </div>
+    <div class="pay-button"><button id="pay"> Pay </button></div>
+  </div>
+</div>

@@ -250,6 +250,7 @@ $('#products').on('click', '.remove', function() {
   console.log(cart);
   //aquí debería actualizar el storage en base a eso y volver a cargar la ruta (?)
   app.stores.session.clear(cart[id]);
+
   location.reload();
 });
 
@@ -259,3 +260,16 @@ app.get('#/cart/payment', function(context) {
   context.render('assets/templates/payment.template')
     .appendTo(context.$element());
 });
+
+/*
+ * calculando total d:
+ */
+let total = Object.keys(cart)
+let totalPrice = 0;
+
+total.forEach(function(element) {
+  let uniquePrice = cart[element].price;
+  uniquePrice = cart[element].price * cart[element].quantity;
+  totalPrice = totalPrice + uniquePrice;
+})
+

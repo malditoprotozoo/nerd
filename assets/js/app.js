@@ -126,14 +126,17 @@ const updateCartSingle = function() {
 
 app.bind('update-cart', function() {
   let sum = 0;
-  let total = 0;
+  let total = Object.keys(cart);
+  let totalPrice = 0;
   $.each(app.session('cart') || {}, function(id, product) {
     sum += product.quantity;
-    total += product.price;
+    let uniquePrice = cart[id].price;
+    uniquePrice = cart[id].price * cart[id].quantity;
+    totalPrice = totalPrice + uniquePrice;
   });
   $('#cart-access')
     .find('#items-cart').text(sum).end()
-    .find('#total-amount').text(total).end()
+    .find('#total-amount').text(totalPrice).end()
     .animate({paddingTop: '30px'})
     .animate({paddingTop: '10px'});
 });

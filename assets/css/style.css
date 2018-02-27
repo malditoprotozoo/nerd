@@ -448,5 +448,7 @@ a#cancel.btn:hover, a#pay.btn:hover {
   align-items: center;
 }
 
-
-.item-cart-container
+/* escondiendo la wishlist mientras no la implementamos */
+#wishlist-btn {
+  display: hide;
+}

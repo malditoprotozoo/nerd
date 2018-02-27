@@ -81,7 +81,7 @@ nav ul li a:hover {
 
 #sub-nav input {
   height: 35px;
-  width: 90%;
+  width: 89%;
   margin: 0;
   border: 0;
   background-color: transparent;
@@ -144,9 +144,9 @@ nav ul li a:hover {
   transition: none;
 }
 
-#cart-access .b-span {
+/* #cart-access .b-span {
 
-}
+} */
 
 #cart-access hr {
   border: none;

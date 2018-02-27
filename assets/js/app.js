@@ -77,7 +77,7 @@ app.get('#/cart', function(context) {
     context.render('assets/templates/cart.template', {item:item})
       .appendTo(context.$element());
   });
-  context.render('assets/templates/cancel.template')
+  context.render('assets/templates/pay.template')
     .appendTo(context.$element());
 });
 
@@ -106,6 +106,10 @@ app.post('#/cart', function(context) {
   cart[itemId].price += parseInt(itemPrice);
   app.session('cart', cart);
   this.trigger('update-cart');
+});
+
+app.post('#/cart/payment', function(context) {
+
 });
 
 const updateCartSingle = function() {
@@ -252,3 +256,7 @@ $('#products').on('click', '.remove', function() {
   app.stores.session.clear(cart[id]);
   location.reload();
 });
+
+// then(function() {
+//   $('#products').append(`<div class="col-12"><button id="cancel">Cancel</button></div>`);
+// });

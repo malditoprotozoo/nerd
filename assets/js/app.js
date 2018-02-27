@@ -239,3 +239,13 @@ app.get('#/title/:title', function(context) {
       }
   });
 });
+
+
+$('#products').on('click', '.remove', function() {
+  let id = $(this).attr('id');
+  console.log(id)
+  console.log(cart[id])
+  delete cart[id];
+  console.log(cart);
+  //aquí debería actualizar el storage en base a eso
+})

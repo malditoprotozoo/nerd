@@ -380,8 +380,23 @@ body #categories .container-categories {
   cursor: pointer;
 }
 
+/* carrito sección de pago */
+.pay-big-container {
+  padding: 0 20px;
+}
+
+.pay-container {
+  padding: 20px;
+  border: 1px solid #332C1F;
+  background-color: #F8F9FA;
+  box-shadow: 7px 7px 0px 0px #332C1F
+}
+
 /* extra */
 .vertical-align {
   display: flex;
   align-items: center;
 }
+
+
+.item-cart-container

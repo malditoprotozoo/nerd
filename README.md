@@ -22,3 +22,6 @@ Para almacenar la información de compra utilizamos Local Storage a través de u
 ## Desarrolladoras
 * Leticia Ferreira /helvette/
 * Victoria Tori Rodríguez /malditoprotozoo/
+
+## Desarrollado para
+[Laboratoria](http://laboratoria.la/)

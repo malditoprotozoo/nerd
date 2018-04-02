@@ -1,5 +1,5 @@
 # Nerd Bookstore
-**Nerd Bookstore** es el demo de una tienda online de venta de libros, cómics y mangas, cuyo sitio web es una Single Page Application (SPA).
+Desarrollado para [Laboratoria](http://www.laboratoria.la), **Nerd Bookstore** es el demo de una tienda online de venta de libros, cómics y mangas, cuyo sitio web es una Single Page Application (SPA).
 
 ## Desarrollo
 Para crear Nerd Bookstore partimos por utilizar un web scraper hecho por nosotras para recopilar los datos desde Book Depository (puedes verlo [aquí](https://github.com/malditoprotozoo/bookScrape)).
@@ -11,7 +11,7 @@ Para almacenar la información de compra utilizamos Local Storage a través de u
 ## Templates
 
 * La vista inicial corresponde a todos los items disponibles:
-![All Items View](assets/img/all-items.png)
+![All Items View](https://user-images.githubusercontent.com/32281138/38102893-0c519206-335b-11e8-859d-1d32857276f3.png)
 * Al hacer click en un producto se pueden ver más detalles sobre el mismo y además se entrega la opción de comprarlo en Book Depository:
 ![Item Detail View](assets/img/item-detail.png)
 * El carro de compras es otra vista. En él se pueden encontrar todos los productos que han sido agregados, con su título correspondiente, la cantidad y el precio total.
@@ -22,6 +22,3 @@ Para almacenar la información de compra utilizamos Local Storage a través de u
 ## Desarrolladoras
 * Leticia Ferreira /helvette/
 * Victoria Tori Rodríguez /malditoprotozoo/
-
-## Desarrollado para
-[Laboratoria](http://laboratoria.la/)
